@@ -1,10 +1,15 @@
-//your variable declarations here
+Star[] meow = new Star[300];//your variable declarations here
 public void setup() 
 {
-  //your code here
+size(500, 500);
+for(int i = 0; i < meow.length;i++){
+	meow[i] = new Star();
+}
 }
 public void draw() 
 {
-  //your code here
+background(0);
+for(int i = 0; i < meow.length;i++){
+	meow.show();
 }
 
