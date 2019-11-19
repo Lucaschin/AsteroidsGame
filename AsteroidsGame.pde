@@ -3,7 +3,7 @@ Spaceship ow = new Spaceship();//your variable declarations here
 
 public void setup() 
 {
-size(500, 500);
+size(1000, 1000);
 for(int i = 0; i < meow.length;i++){
 	
 	meow[i] = new Star();
@@ -27,10 +27,10 @@ for(int i = 0; i < meow.length;i++){
 
 public void keyPressed(){
   if(key == 'r'){
- 	ow.setDirectionX(0);
- 	ow.setDirectionY(0);
+ 	ow.setDirectionX((double)(Math.random()*1000));
+
  }
  if(key == 'w'){
- 	ow.accelerate
+ 	ow.accelerate(3);
  }
 }
