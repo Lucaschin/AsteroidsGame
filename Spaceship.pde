@@ -26,5 +26,16 @@ myPointDirection =(int)(Math.random()*360);
 }
 public void setDirectionY(int y){
  myDirectionY = 0;
+}public void setX(double x){
+	myDirectionX = x;
+}
+public double getX(){
+	return myDirectionX;
+}
+public void setY(double y){
+	myDirectionY = y;
+}
+public double getY(){
+	return myDirectionY;
 }
 }
