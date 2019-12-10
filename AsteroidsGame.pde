@@ -1,6 +1,6 @@
 Star[] meow = new Star[500];
 Spaceship ow = new Spaceship();//your variable declarations here
-Asteroid[]cow = new Asteroid[50];
+Asteroid[]cow = new Asteroid[500];
 public void setup() 
 {
 size(1000, 1000);
@@ -53,4 +53,4 @@ public void keyPressed(){
  if(key == 's'){
  	ow.accelerate(-1 );
  }
-}
+ }
