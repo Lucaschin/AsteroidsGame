@@ -30,5 +30,12 @@ myColor = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.ran
 		turn(rotSpeed);
 		super.move(); 
 	}
+	public double getMyyCenterX(){
+	return myCenterX;
+}
+public double getMyyCenterY(){
+	return myCenterY;
+}
+
 
 }

@@ -18,6 +18,21 @@ myCenterY = 500;
 myColor = #3CADE2;
 
 }
+public double getMyCenterX(){
+	return myCenterX;
+}
+public double getMyCenterY(){
+	return myCenterY;
+}
+public double getMyPointDirection(){
+	return myPointDirection;
+}
+public double getMyDirectionX(){
+	return myDirectionX;
+}
+public double getMyDirectionY(){
+	return myDirectionY;
+}
 public void setDirectionX(double x){
 myCenterX = (int)(Math.random()*1000);
 myCenterY = (int)(Math.random()*1000);

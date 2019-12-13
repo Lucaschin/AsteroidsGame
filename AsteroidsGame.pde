@@ -1,36 +1,53 @@
 Star[] meow = new Star[500];
 Spaceship ow = new Spaceship();//your variable declarations here
-Asteroid[]cow = new Asteroid[500];
+ArrayList <Asteroid> cow = new ArrayList <Asteroid>();
+ArrayList <Bullet> mow = new ArrayList <Bullet>();
+
 public void setup() 
 {
-size(1000, 1000);
-for(int i = 0; i < meow.length;i++){
+	size(1000, 1000);
+	for(int i = 0; i < meow.length;i++){
 	
-	meow[i] = new Star();
-}
-for(int i = 0; i < cow.length;i++){
+		meow[i] = new Star();
+	}
+	for(int i = 0; i < 50;i++){
 	
-		cow[i] = new Asteroid();
+		cow.add(new Asteroid());
+
+	}
 }
-}
-public void draw() 
+	public void draw() 
 {
-background(0);
-ow.show();
-noStroke();
-ow.move();
+	background(0);
+	ow.show();
+	noStroke();
+	ow.move();
 
 
-for(int i = 0; i < meow.length;i++){
+	for(int i = 0; i < meow.length;i++){
 	meow[i].show();
+	}
+
+	for(int i = 0; i < cow.size();i++){
 	
+		cow.get(i).show();
+		cow.get(i).move();
+	}
+	for(int i = 0; i < mow.size();i++){
 	
-}
-for(int i = 0; i < cow.length;i++){
+		mow.get(i).show();
+		mow.get(i).move();
 	
-		cow[i].show();
-		cow[i].move();
-}
+	}
+	for(int i = 0; i < mow.size();i++){
+		for(int u = 0; u < cow.size();u++){
+			if(dist((float)mow.get(i).getCenterX(), (float)mow.get(i).getCenterY() , (float)cow.get(u).getMyyCenterX(), (float)cow.get(u).getMyyCenterY()) < 2){
+	
+				cow.remove(u);
+				mow.remove(i);
+			}
+		}
+	}
 }
 
 public void keyPressed(){
@@ -39,18 +56,21 @@ public void keyPressed(){
  		ow.setX(0);
  		ow.setY(0);
 
- }
- if(key == 'w'){
+ 	}
+ 	if(key == 'w'){
  	
- 	ow.accelerate(1);
- }
- if(key == 'a'){
- ow.turn(-15);
- }
- if(key == 'd'){
- 	ow.turn(15);
- }
- if(key == 's'){
- 	ow.accelerate(-1 );
- }
+ 		ow.accelerate(1);
+ 	}
+ 	if(key == 'a'){
+ 		ow.turn(-15);
+ 	}
+ 	if(key == 'd'){
+ 		ow.turn(15);
+ 	}
+ 	if(key == 's'){
+ 		ow.accelerate(-1 );
+ 	}
+ 	if(key == 'f'){
+ 		mow.add(new Bullet(ow));
+ 	}
  }
